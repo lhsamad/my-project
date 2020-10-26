@@ -37,8 +37,10 @@ const PostForm = ({ post: propsPost, addNewPost, updatePost }) => {
   };
 
   if (saved === true) {
+    console.log("Saved");
     return <Redirect to="/" />;
   }
+
   return (
     <form className="container" onSubmit={handlePostForm}>
       <h1>Add a New Post</h1>
@@ -46,7 +48,6 @@ const PostForm = ({ post: propsPost, addNewPost, updatePost }) => {
         <label htmlFor="form-title">Title:</label>
         <br />
         <input
-          defaultValue={post.title}
           id="form-title"
           value={post.title}
           onChange={(event) =>
